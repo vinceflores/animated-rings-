@@ -1,0 +1,158 @@
+:root {
+  --visble-color: green;
+  --bg-color: black;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+.circle-container {
+  /* background-color: white; */
+  width: 500px;
+  height: 500px;
+  z-index: 3;
+  border-radius: 50%;
+  border-style: solid;
+  border-top-color: var(--visble-color);
+  border-bottom-color: var(--visble-color);
+  border-left-color: var(--bg-color);
+  border-right-color: var(--bg-color);
+  border-top-width: 15px;
+  border-bottom-width: 1px;
+  animation: grow-circle-container;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 15s;
+}
+
+@keyframes grow-circle-container {
+  from {
+    transform: rotate(360deg);
+    /* scale: 0.5; */
+  }
+  to {
+    /* scale: 0.7; */
+  }
+}
+
+.circle-sub-container {
+  width: 425px;
+  height: 425px;
+  z-index: 2;
+  border: var(--visble-color) dashed 5px;
+  border-radius: 50%;
+  border-left-color: var(--bg-color);
+  border-right-color: var(--bg-color);
+  border-top-color: var(--bg-color);
+  animation-name: sub-circle;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+}
+
+@keyframes sub-circle {
+  from {
+    transform: rotate(-360deg);
+  }
+}
+
+.circle {
+  width: 350px;
+  height: 350px;
+  z-index: 1;
+  border-width: 10px 0 0 0;
+  border-color: var(--visble-color);
+  opacity: 0.5;
+  border-style: ridge;
+  border-radius: 100%;
+  animation-name: circle1;
+  animation-direction: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+}
+
+@keyframes circle1 {
+  0% {
+    transform: rotate(360deg);
+    scale: 0.8;
+  }
+
+  /* 25%{
+    scale: 0.5;
+  } */
+  50% {
+    scale: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    scale: 0.8;
+  }
+}
+
+.circle2 {
+  width: 300px;
+  height: 300px;
+  border: var(--visble-color) double 20px;
+  border-width: 0 2px 0 4px;
+  border-radius: 50%;
+  animation: circle2 ease-in-out;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-delay: 500ms;
+}
+
+.circle3 {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: var(--visble-color) dashed;
+  border-width: 0 5px 0 0;
+  animation: circle3 linear;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+.circle4 {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+
+  border: var(--visble-color) dashed;
+  border-width: 0 0 10px 0;
+  animation: circle4 linear;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  z-index: 3;
+}
+
+@keyframes circle2 {
+  0% {
+    scale: 1;
+  }
+  70% {
+    scale: 0.8;
+  }
+
+  100% {
+    scale: 0.7;
+  }
+}
+
+@keyframes circle3 {
+  from {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes circle4 {
+  from {
+    transform: rotate(360deg);
+  }
+}
